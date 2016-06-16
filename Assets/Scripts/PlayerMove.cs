@@ -8,12 +8,15 @@ public class PlayerMove : MonoBehaviour {
     private Rigidbody rb;
     private Vector3 pushDirection;
 
+
     void Start() {
         rb = GetComponent<Rigidbody>();
+
+
     }
 
     void Update() {
-        
+
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
             // Get movement of the finger since last frame
             Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;

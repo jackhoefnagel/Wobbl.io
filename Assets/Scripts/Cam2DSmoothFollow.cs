@@ -5,16 +5,25 @@ public class Cam2DSmoothFollow : MonoBehaviour {
 
     public Camera cam;
 
-    public Transform target;
+    Transform target;
     public float lerpSmoothness = 1.0f;
 
     private Vector3 camTargetPosition;
 
     public float cameraDistance = 5;
     private float distanceToPlayer;
+
+    public void Setup(GameObject _target)
+    {
+        target = _target.transform;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+        if (target == null)
+            return;
+
         UpdatePosition();
 
         UpdateDistance();
